@@ -52,6 +52,7 @@ public class EventPay {
     @Subscribe
     public void onPayResult(WeChatPayResultModel result) {
         if (mCallback != null) {
+            result.setStatus(result.getResCode());
             mCallback.invoke(result);
         }
         ManagerFactory.getManagerService(DispatchEventManager.class).getBus().unregister(this);

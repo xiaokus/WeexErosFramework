@@ -7,12 +7,19 @@ package com.benmu.framework.model;
 public class WeChatPayResultModel {
     public int resCode;
     public String msg;
-
+    public Object status;
     public WeChatPayResultModel(int resCode, String msg) {
         this.resCode = resCode;
         this.msg = msg;
+        this.status = resCode;
+    }
+    public Object getStatus() {
+        return status;
     }
 
+    public void setStatus(Object status) {
+        this.status = status;
+    }
     public WeChatPayResultModel() {
     }
 }
